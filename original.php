@@ -29,6 +29,7 @@ $firstDayofNextMonth = (int)date('j', strtotime('first day of next month'));
 <meta charset="utf-8">
 <head>
   <title>カレンダー</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
@@ -46,13 +47,14 @@ $firstDayofNextMonth = (int)date('j', strtotime('first day of next month'));
     for ($i=0; $i<$firstWeekDay; $i++) {
         $getValue =$i+1;
         $value = $lastDayOfMonth + $getValue;
-        echo "<td>".$value."</td>";
+        echo "<td id='lastDayOfMonth'>".$value."</td>";
     }
 
     for ($cell = $firstWeekDay; $cell<35; $cell++) {
         if ($cell %7===0) {
             echo "<tr></tr>";
         }
+
         if ($day <= $lastDay) {
             echo "<td>".$day."</td>";
         } else {
